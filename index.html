@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>О HTML</title>
+	<link rel="icon" type="image/png" href="favicon.png" />
+	<link rel="stylesheet" type="text/css" href="style.css" media="screen">
+	<script type="text/javascript">
+		function nav() { alert("Браузер: "+navigator.appName+" \nВерсия: "+navigator.appVersion); }
+		function loc() { alert("User: " + navigator.userAgent +" \nЛокация: "+location.href); }
+		function sceen() { alert("Разрешение экрана: " + screen.width+"x"+screen.height + "\nГлубина цвета: "+ screen.colorDepth); 
+			var newWin = window.open("about:blank", "hello", "width=250,height=50");
+			newWin.document.write("Разрешение экрана: " + screen.width+"x"+screen.height + "\nГлубина цвета: "+ screen.colorDepth);
+		}
+		function wind() {
+			window.status="Мой документ";
+			window.open("mydoc.htm", "Мой документ");
+			window.close();
+			window.alert("Сообщение");
+			window.alert("Сообщение" + window.status);
+			window.confirm("Да?");
+		}
+		function init() {
+			document.getElementById("html1").style.zIndex = 3;
+			document.getElementById("js1").style.zIndex = 1;
+		}
+		function first() {
+			document.getElementById("css1").style.visibility = "hidden";
+		}
+		function second() {
+			document.getElementById("css1").style.visibility = "visible";
+		}
+		function third() {
+			var temp = document.getElementById("html1").style.zIndex;
+			document.getElementById("html1").style.zIndex = document.getElementById("js1").style.zIndex;
+			document.getElementById("js1").style.zIndex = temp;
+		}
+	</script>
+</head>
+<body>
+&nbsp;<div class="text">
+    <main>
+		<script type="text/javascript">
+			document.write(document.lastModified);
+		</script>
+		<h1><center>HTML</h1>
+		<p><font onmouseover="this.style.color='red';this.style.fontFamily='Times';" onmouseout="this.style.color='black';this.style.fontFamily='Georgia';">HTML (HyperText Markup Language) — это язык разметки гипертекста, используемый для создания веб-страниц. Он был создан в 1991 году Тимом Бернерсом-Ли и с тех пор стал основным языком разметки для создания динамических веб-сайтов.
+		Основные элементы HTML включают теги, такие как html, head и body, а также атрибуты, такие как title, meta и style. Атрибут title используется для задания заголовка страницы, а атрибут meta используется для указания метаданных, таких как автор, ключевые слова и описание страницы. Атрибут style используется для указания стилей, применяемых к элементам на странице, таких как цвета, шрифты и расположение элементов.</font></p>
+		<p onmouseover="this.style.textIndent='25mm';this.style.marginRight='30mm'" onmouseout="this.style.textIndent='6mm';this.style.marginRight='0px'">Средства работы с HTML включают в себя инструменты для форматирования текста, вставки изображений и видео, создания списков и древовидных структур, а также для работы с таблицами и формами. Некоторые из наиболее популярных средств работы с HTML включают в себя браузеры, редакторы кода, интегрированные среды разработки (IDE), фреймворки и библиотеки.</p>
+		<p><font ="Georgia';">Существует несколько аналогов HTML, которые могут использоваться вместо него. Например, вместо языка разметки XML можно использовать язык разметки DocBook, который является подмножеством XML и может использоваться для хранения и обмена данными между различными системами. Вместо языка разметки SGML можно использовать язык разметки RDF, который может использоваться для хранения и обмена данными между различными системами.</font></p>
+		<br>
+		<table>
+			<thead>
+				<tr>
+					<th colspan="2"><h1>CSS/JS</h1>	</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class = "css">CSS (Cascading Style Sheets) — это язык описания внешнего вида веб-страницы.</td>
+					<td class = "js">JS (JavaScript) — это язык программирования, который используется для создания интерактивных элементов на веб-страницах.</td>
+				</tr>
+			</tbody>
+		</table>
+		<table>
+			<tr>
+				<td>
+					<div class="imgs">
+					   <img src="html.png" alt="HTML" id="html1" class="html1" />
+					   <img src="css.png" alt="JS" id="css1" class="css1" />
+					   <img src="js.png" alt="CSS" id="js1" class="js1" />
+					</div>
+				</td>
+			<!-- </tr> -->
+			<!-- <tr> -->
+				<td>
+					<div class="imgbuttons">
+						<input class="temp" type="button" value="Первая" onClick="first()"><br>
+						<input class="temp" type="button" value="Вторая" onClick="second();"><br>
+						<input class="temp" type="button" value="Третья" onClick="third()">
+					</div>
+				</td>
+		</tr>
+		</table>
+		<script type="text/javascript">
+			init();
+		</script>
+
+		<div class="buttons">
+		<input class="test" type="button" value="Window" onClick="wind()">
+		<input class="test" type="button" value="Navigator" onClick="nav()">
+		<input class="test" type="button" value="Locator" onClick="loc()">
+		<input class="test" type="button" value="Screen" onClick="sceen()">
+		</div>
+        <!-- </details>&nbsp;<h2>Пример кода для создания простой веб-страницы с использованием HTML: -->
+
+			<!-- <code>{html}<!DOCTYPE html> -->
+			<!-- <html> -->
+			<!-- <head> -->
+				<!-- <title>Моя первая веб-страница</title> -->
+			<!-- </head> -->
+			<!-- <body> -->
+				<!-- <h1>Привет, мир!</h1> -->
+				<!-- <p>Это моя первая веб-страница. Я использовал HTML для создания этой страницы.</p> -->
+			<!-- </body> -->
+			<!-- </html> -->
+			<!-- </code></h2> -->
+          <!-- <p class="news"><span class="date">25.12.1990 - </span>Первый в мире браузер</p> -->
+          <!-- <p class="news"><span class="date">06.08.1991 - </span>Первый в мире сайт</p> -->
+          <!-- <p class="news"><span class="date">01.10.1994 - </span>World Wide Web Consortium (W3C)</p> -->
+          <!-- <p class="news"><span class="date">17.10.1994 - </span>Perl 5</p> -->
+          <!-- <p class="news"><span class="date">Начало 1995 года - </span>Apache HTTP Server</p> -->
+          <!-- <p class="news"><span class="date">23.05.1995 - </span>MySQL</p> -->
+          <!-- <p class="news"><span class="date">08.06.1995 - </span>Personal Home Page (PHP 1.0)</p> -->
+          <!-- <p class="news"><span class="date">17.12.1996 - </span>Cascading Style Sheets (CSS1)</p> -->
+    </main>
+  </div> 
+  <style>
+	td {color:#000; font-size:20px;}
+	td.js:hover {color:#FFD700; font-weight:bold; border:1px solid #7799aa;}
+	td.css:hover {color:#4169E1;font-weight:bold; border:1px solid #7799aa;}
+  </style>
+</body>
+</html>
