@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Смайлики</title>
+		<style>
+			body {
+				background-color: #f3f2ff; /* Цвет фона веб-страницы */
+				color: #21f;
+			} 
+			input {
+				font-size: 24px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="first" style="float: left;">
+			<h1>Наведи курсор на назвение животного:   </h1>
+			<table border="2">
+				<tr>
+					<td>
+						<p id="zebra" style="font-size: 20px;">Медведь</p>
+					</td>
+				</tr>
+					<td>
+						<p id="ver" style="font-size: 20px;">Фламинго</p>
+					</td>
+					<td>
+						<img style="visibility: hidden;" id="img" class="fit-picture" alt="" height=400 width=600/>
+					</td>
+				<tr>
+				</tr>
+				<tr>
+					<td>
+						<p id="slon" style="font-size: 20px;">Слон</p>
+					</td>
+				</tr>
+			</table>
+			<br>
+		</div>
+		<div class="second" style="margin-left: 10%; float: left; text-align: center;">
+			<h1>Слайд шоу:</h1>
+			<img id="show" height=200 width=300/>
+			<br>
+			<button  type="button" id="button_change"  style="background-color: #21f; font-size: 20px; border: 0px; color: white;"> Сменить</button >
+		</div>
+	</body>
+	<script type="text/javascript">
+		document.getElementById("zebra").addEventListener("mouseover", function() {
+			document.getElementById("img").src = "bear.jpg";
+			document.getElementById("img").style.visibility = "visible";
+			
+		});
+		document.getElementById("ver").addEventListener("mouseover", function() {
+			document.getElementById("img").src = "flamingo.jpg";
+			document.getElementById("img").style.visibility = "visible";
+			
+		});
+		document.getElementById("slon").addEventListener("mouseover", function() {
+			document.getElementById("img").src = "slon.jpg";
+			document.getElementById("img").style.visibility = "visible";
+			
+		});
+		document.getElementById("zebra").addEventListener("mouseout", function() {
+			document.getElementById("img").style.visibility = "hidden";
+		});
+		document.getElementById("ver").addEventListener("mouseout", function() {
+			document.getElementById("img").style.visibility = "hidden";
+		});
+		document.getElementById("slon").addEventListener("mouseout", function() {
+			document.getElementById("img").style.visibility = "hidden";
+		});
+		var imgs = [
+			"bear.jpg",
+			"flamingo.jpg",
+			"slon.jpg"
+		]
+		document.getElementById('show').src = imgs[0];
+		var i = 0;
+		document.getElementById('button_change').addEventListener("click",function() {
+			i++;
+			if (i == 3) i=0;
+			document.getElementById('show').src = imgs[i];
+		});
+	</script>
+</html>

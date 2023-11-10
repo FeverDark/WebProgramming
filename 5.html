@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Калькулятор</title>
+		<script type="text/javascript">
+			var go = true
+			while (go) {
+				var first = prompt("Введите первое число:");
+				var scond = prompt("Введите второе число:");
+				var operand = prompt("Введите знак:");
+				var result = null;
+				switch(operand)
+				{
+					case "+":
+					result = parseInt(first) + parseInt(scond);
+					break;
+					case "-":
+					result = parseInt(first) - parseInt(scond);
+					break;
+					case "*":
+					result = parseInt(first) * parseInt(scond);
+					break;
+					case "/":
+					result = parseInt(first) / parseInt(scond);
+					break;
+				}
+				if(isNaN(result) || !isFinite(result) || result == null)
+				{
+					alert("Знак неправильный или не заданы числа")
+				}
+				else
+				{
+					alert(first + operand +  scond + " = " + result)
+				}
+				go = confirm("Считать снова?")
+			}
+		</script>
+	</head>
+	<body style="background-color: #f3f2ff">
+	</body>
+</html>

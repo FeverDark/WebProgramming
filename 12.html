@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Смайлики</title>
+		<style>
+			body {
+				background-color: #f3f2ff; /* Цвет фона веб-страницы */
+				color: #f2f;
+			} 
+			input {
+				font-size: 24px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="first" style="float: left;">
+			<h1>Виды смайликов:</h1>
+			<table>
+				<tr>
+					<td>
+						
+					</td>
+				</tr>
+					<td>
+						<img id="img1" class="fit-picture" src="1.png" alt="" height=100 width=100/>
+					</td>
+					<td>
+						<img id="img2" class="fit-picture" src="2.png" alt="" height=100 width=100/>
+					</td>
+				<tr>
+				</tr>
+				<tr>
+					<td>
+						<img id="img3" class="fit-picture" src="3.png" alt="" height=100 width=100/>
+					</td>
+					<td>
+						<img id="img4" class="fit-picture" src="4.png" alt="" height=100 width=100/>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<input type="text" id="smile" name="smile" readonly="true"/>
+		</div>
+		<div class="second" style="float: left; text-align: center;">
+			<h1>Слайд шоу:</h1>
+			<img id="show" height=100 width=100/>
+			<br>
+			<button  type="button" id="button_change"  style="background-color: #f2f; font-size: 20px; border: 0px;"> Сменить</button >
+		</div>
+	</body>
+	<script type="text/javascript">
+		document.getElementById("img1").addEventListener("mouseover", function() {
+			document.getElementById("smile").value = "Унижен";
+		});
+		document.getElementById("img2").addEventListener("mouseover", function() {
+			document.getElementById("smile").value = "Улыбочку";
+		});
+		document.getElementById("img3").addEventListener("mouseover", function() {
+			document.getElementById("smile").value = "Ха-ха";
+		});
+		document.getElementById("img4").addEventListener("mouseover", function() {
+			document.getElementById("smile").value = "Круто";
+		});
+		document.getElementById("img1").addEventListener("mouseout", function() {
+			document.getElementById("smile").value = "";
+		});
+		document.getElementById("img2").addEventListener("mouseout", function() {
+			document.getElementById("smile").value = "";
+		});
+		document.getElementById("img3").addEventListener("mouseout", function() {
+			document.getElementById("smile").value = "";
+		});
+		document.getElementById("img4").addEventListener("mouseout", function() {
+			document.getElementById("smile").value = "";
+		});
+		var imgs = [
+			document.getElementById("img1"),
+			document.getElementById("img2"),
+			document.getElementById("img3"),
+			document.getElementById("img4")
+		]
+		document.getElementById('show').src = imgs[0].src;
+		var i = 0;
+		document.getElementById('button_change').addEventListener("click",function() {
+			i++;
+			if (i == 4) i=0;
+			document.getElementById('show').src = imgs[i].src;
+		});
+	</script>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Сказка</title>
+	</head>
+	<body style="background-color: #f3f2ff">
+		<h1>Сказка</h1>
+		<table>
+			<tr>
+				<td> <p> Имя героя:</p>  </td>
+				<td> <input id="man"> </td>
+			</tr>
+			<tr>
+				<td> <p> Любимое занятие:</p>  </td>
+				<td> <input id="hobby"> </td>
+			</tr>
+			<tr>
+				<td> <p> Друг героя:</p>  </td>
+				<td> <input id="friend"> </td>
+			</tr>
+			<tr>
+				<td> <p> Любимый подарок:</p>  </td>
+				<td> <input id="gift"> </td>
+			</tr>
+		</table>
+		<button id="go">Вывести</button>
+		<script type="text/javascript">
+			var man = document.getElementById('man')
+			var friend = document.getElementById('friend')
+			var hobby = document.getElementById('hobby')
+			var gift = document.getElementById('gift')
+			document.getElementById('go').addEventListener('click', function() {
+				if (man.value != "" && hobby.value != "" && friend.value != "" && gift.value != ""){ 
+					var inputText = 'Жил-был '+ man.value +', да в лес '+hobby.value + ' ходил. Однажды из-за дерева он увидел '+friend.value +', который энергично что-то делал. Не обращая внимания '+man.value+ ' пошел по лесу. Но вдруг '+friend.value+' закончил свое занятие и пообежал в его сторону. '+man.value+' так испугался, что стоял как вкопанный. Но вдруг '+friend.value+' достал перед ним '+gift.value+' и сказал: "С Днем Народного Единства!" '
+					var win=window.open("","","width=1000px,height=509px");
+					win.document.open();
+					var temp='<head><title>Сказка</title></head><body style="background-color: #f3f2ff"><h1>Сказка</h1>'+inputText+'</body>'
+					win.document.write(temp); 
+				}
+			});
+		</script>
+	</body>
+</html>
